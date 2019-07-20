@@ -1,3 +1,4 @@
+
 const InvalidAccessException = use('App/Exceptions/InvalidAccessException');
 const ResourceNotExistException = use('App/Exceptions/ResourceNotExistException');
 
@@ -7,9 +8,10 @@ class AuthorizationService{
             throw new ResourseNotExistException();
         }
         if(resource.user_id !== user.id){
+            // throw new Error();
             throw new InvalidAccessException();
         }
     }
 }
 
-module.expors = new AuthorizationService();
+module.exports = new AuthorizationService();
